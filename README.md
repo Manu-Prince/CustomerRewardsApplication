@@ -9,15 +9,31 @@ A Spring Boot application to manage customer transactions and calculate monthly 
 - Integration tests for the controller and service layers
 - Logs application activity into the console and file (logback)
 
+📖 API Documentation (Swagger/OpenAPI)
+
+This project uses **Swagger** (OpenAPI) for interactive API documentation.
+
+- After starting the application, access the Swagger UI at:  
+  [http://localhost:8083/swagger-ui/index.html](http://localhost:8083/swagger-ui/index.html)
+
+- The OpenAPI specification is available at:  
+  [http://localhost:8083/v3/api-docs](http://localhost:8083/v3/api-docs)
+
+Use the Swagger UI to:
+- Explore all available endpoints
+- View request/response schemas
+- Try out API calls directly from your browser
+  
 🧰 Tech Stack
 
-Java 21
+Java 17
 Spring Boot 3
 Spring Data JPA
 Hibernate
 MySQL
 JUnit 5
 Mockito
+Lombok
 
 🎯 Reward Calculation Rules
 
@@ -83,7 +99,7 @@ Customer-Rewards-App/
       Validated using jakarta.validation annotations
 
 3. Validation Layer
-      Enforces constraints using annotations like:@NotNull, @NotBlank   
+      Enforces constraints using annotations like:@NotNull, @NonNull   
       Validation errors are automatically handled via @Valid
 
 4. Repository Layer    
@@ -105,6 +121,7 @@ Customer-Rewards-App/
       Catches custom exceptions like CustomerNotFoundException, InvalidRequestException, etc.    
       Provides consistent error responses with appropriate HTTP status codes    
       Handles validation errors and unhandled exceptions gracefully
+
 📡 REST API Endpoints
 
 Add Customer
@@ -196,7 +213,7 @@ Response:
 
 1. Clone the Repository
 
-git clone https://github.com/Manu-Prince/CustomerRewardApplication.git
+git clone https://github.com/Manu-Prince/CustomerRewardsApplication.git
 cd CustomerRewardApplication
 
 2. Configure MySQL Database
@@ -216,11 +233,11 @@ Application will be accessible at: http://localhost:8083
 
 📂 Log Configuration
 
-Logs are written to both the console. Only application logs are enabled (others suppressed).
+Logs are written to both the console and the file: logs/CustomerRewards.log. Only application logs are enabled (others suppressed).
+
 🧪 Run Tests
 
 mvn test
-
 Includes integration tests for:
       - Validating transactions
       - Calculating rewards
